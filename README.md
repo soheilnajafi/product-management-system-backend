@@ -1,6 +1,6 @@
 # Product Management System Backend
 
-This is a Spring Boot backend project for a Product Management System. It provides REST APIs for product CRUD operations, user registration, login workflow, and MySQL database persistence using Spring Data JPA.
+This is a Spring Boot backend project for a Product Management System. It provides REST APIs for product CRUD operations, user registration, login workflows, and MySQL database persistence using Spring Data JPA and Hibernate.
 
 ## Tech Stack
 
@@ -21,6 +21,7 @@ This is a Spring Boot backend project for a Product Management System. It provid
 - User login workflow
 - MySQL database persistence
 - Repository-based database access using JpaRepository
+- REST API integration support for an Angular frontend
 
 ## Backend Structure
 
@@ -97,9 +98,42 @@ Main entities:
 - Product
 - Registration
 
+## Configuration
+
+The backend runs on port:
+
+```properties
+server.port=8090
+```
+
+Example database configuration:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/product_database?useSSL=false
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
+```
+
+## Related Frontend Repository
+
+This backend is designed to work with the Angular frontend repository:
+
+```text
+product-management-system-frontend
+```
+
+The Angular frontend connects to this backend using REST APIs such as:
+
+```text
+http://localhost:8090/product/prd
+http://localhost:8090/all/users
+http://localhost:8090/all/userLogin
+```
+
 ## Notes
 
-This repository currently contains the Spring Boot backend only. An Angular frontend can be connected later through REST API integration.
+This repository contains the Spring Boot backend for the Product Management System. The frontend is maintained separately in the Product Management System frontend repository.
 
 ## Future Improvements
 
